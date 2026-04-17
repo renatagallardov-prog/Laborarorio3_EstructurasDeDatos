@@ -109,3 +109,17 @@ Fri Apr 17 05:54:45 PM UTC 2026:
  tests:  5|4
 total_score: 20/60
 824793a
+Fri Apr 17 06:35:55 PM UTC 2026: 
+ hashmap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:118:7: error: expected ‘while’ before ‘(’ token
+  118 |     } (while pos != start); // aqui sigo mientras no haya vuelto al principio
+      |       ^
+hashmap.c:107:10: error: unused variable ‘start’ [-Werror=unused-variable]
+  107 |     long start = pos; // guardo la posicion inicial
+      |          ^~~~~
+cc1: all warnings being treated as errors
+735db46
