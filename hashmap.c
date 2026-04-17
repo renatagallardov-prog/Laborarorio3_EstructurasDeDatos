@@ -44,20 +44,20 @@ int is_equal(void* key1, void* key2){
 // Esta función crea una variable de tipo HashMap, inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. 
 // Inicialice el índice current a -1.
 
-HashMap * createMap(long capacity) {
+HashMap * createMap(long capacity) { //creo el mapa desde cero 
     HashMap * map =(HashMap*) malloc(sizeof(HashMap)); // aqui reservo la memoria
     if (map == NULL) return NULL;
-    map->buckets = (Pair**) malloc(sizeof(Pair*) * capacity);
-    if (map->buckets == NULL){
-        free(map);
+    map->buckets = (Pair**) malloc(sizeof(Pair*) * capacity); //aqui yo creo el arreglo
+    if (map->buckets == NULL){ //aqui veo que no hay ni un elemento dentro de buckets
+        free(map); //aqui liberamos memoria
         return NULL;
     }
-    for (long i = 0; i < capacity; i++){
-        map->buckets[i] = NULL;
+    for (long i = 0; i < capacity; i++){ // recorro toda la tabla
+        map->buckets[i] = NULL; //indico que cada casilla esta vacia para poder utilizarlas
     }
-    map->size = 0;
+    map->size = 0; //inicializar tamaño en 0
     map->capacity = capacity;
-    map->current = -1;
+    map->current = -1; //aqui todavia no hemos accedido a ninguna posici´on
 
     return map;
 }
@@ -71,11 +71,27 @@ HashMap * createMap(long capacity) {
 //    c - Ingrese el par en la casilla que encontró.
 // No inserte claves repetidas. Recuerde que el arreglo es circular. Recuerde actualizar la variable size.
 
-void insertMap(HashMap * map, char * key, void * value) {
-    
-    
-
-}
+void insertMap(HashMap * map, char * key, void * value) { //inserto nuevo par
+    long pos = hash(key, map->capacity); //aqui calcule donde ira la posicion inicial la cual estara la clave
+    long start = pos; // guardo la posicion inicial despues de dar toda la vuelta
+    do{
+        if(map->buckets[pos] == NULL){
+            map->buckets[pos] = createPair(key,value);
+            map->size++;
+            map->current = pos;
+            return;
+        }
+        if (map->buckets[pos]->key == NULL){ //aqui la casilla no esta vacia, pero quedo invalida
+            map->buckets[pos]->key = key;
+            map->buckets[pos]->value = value;
+            map->size++;
+            map->current = pos;
+            return;
+        }
+        if(is_equal(map->buckets[pos]->key,key)) return; //si es que la clave esta repetida
+        pos = (pos + 1) % map->capacity;
+        
+    } while(pos != start); //aqui indico que ya recorrí toda la tabla
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 
 // Recuerde que para buscar el par debe:
