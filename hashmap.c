@@ -115,7 +115,7 @@ Pair * searchMap(HashMap * map,  char * key) {
             pos = (pos + 1) % map->capacity;
         }
         
-    } (while pos != start); // aqui sigo mientras no haya vuelto al principio
+    } while (pos != start); // aqui sigo mientras no haya vuelto al principio
     
     return NULL;
 }
