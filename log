@@ -2,3 +2,23 @@ Fri Apr 17 05:01:11 PM UTC 2026:
  tests:  0|7
 total_score: 0/60
 276c96a
+Fri Apr 17 05:19:39 PM UTC 2026: 
+ hashmap.c | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:53:9: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   53 |         return;
+      |         ^~~~~~
+hashmap.c:47:11: note: declared here
+   47 | HashMap * createMap(long capacity) {
+      |           ^~~~~~~~~
+hashmap.c:57:5: error: expected ‘;’ before ‘}’ token
+   57 |     }
+      |     ^
+hashmap.c: At top level:
+hashmap.c:78:1: error: expected identifier or ‘(’ before ‘}’ token
+   78 | }
+      | ^
+a797242
