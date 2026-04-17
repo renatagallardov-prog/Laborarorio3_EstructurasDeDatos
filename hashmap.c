@@ -73,7 +73,7 @@ HashMap * createMap(long capacity) {
 
 void insertMap(HashMap * map, char * key, void * value) {
     
-    }
+    
 
 }
 
