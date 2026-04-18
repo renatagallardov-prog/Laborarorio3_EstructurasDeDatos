@@ -110,12 +110,12 @@ Pair * searchMap(HashMap * map,  char * key) {
         if (map->buckets[pos] == NULL) return NULL;
         //verifico si el par es válido y comparo si la clave es igual a la que estoy buscando
         if (map->buckets[pos]->key != NULL && is_equal(map->buckets[pos]->key,key)){
-            map->current = pos;
+            map->current = pos; 
             return map->buckets[pos];
         }
-        pos = (pos + 1) % map->capacity;
+        pos = (pos + 1) % map->capacity; //arreglo circular
         
-    }while (pos != start); // aqui sigo mientras no haya vuelto al principio
+    } while (pos != start); // aqui sigo mientras no haya vuelto al principio
     
     return NULL;
 }
@@ -127,7 +127,11 @@ Pair * searchMap(HashMap * map,  char * key) {
 // Recuerde actualizar la variable size.
 
 void eraseMap(HashMap * map,  char * key) {    
-
+    Pair *pair = searchMap(map,key);
+    if (pair != NULL){
+        pair->key = NULL;
+        map->size--;
+    }
 
 }
 
