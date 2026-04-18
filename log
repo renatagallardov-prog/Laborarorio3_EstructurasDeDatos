@@ -147,3 +147,15 @@ Sat Apr 18 04:37:40 PM UTC 2026:
  tests:  13|2
 total_score: 40/60
 3804e60
+Sat Apr 18 04:40:22 PM UTC 2026: 
+ hashmap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:155:56: error: ‘key’ undeclared (first use in this function); did you mean ‘key_t’?
+  155 |         if (map->buckets[i] != NULL && map->buckets[i]>key != NULL){
+      |                                                        ^~~
+      |                                                        key_t
+hashmap.c:155:56: note: each undeclared identifier is reported only once for each function it appears in
+c19afbc
