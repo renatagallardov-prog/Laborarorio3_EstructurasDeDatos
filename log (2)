@@ -1,0 +1,183 @@
+Fri Apr 17 05:01:11 PM UTC 2026: 
+ tests:  0|7
+total_score: 0/60
+276c96a
+Fri Apr 17 05:19:39 PM UTC 2026: 
+ hashmap.c | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:53:9: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   53 |         return;
+      |         ^~~~~~
+hashmap.c:47:11: note: declared here
+   47 | HashMap * createMap(long capacity) {
+      |           ^~~~~~~~~
+hashmap.c:57:5: error: expected ‘;’ before ‘}’ token
+   57 |     }
+      |     ^
+hashmap.c: At top level:
+hashmap.c:78:1: error: expected identifier or ‘(’ before ‘}’ token
+   78 | }
+      | ^
+a797242
+Fri Apr 17 05:23:45 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c:78:1: error: expected identifier or ‘(’ before ‘}’ token
+   78 | }
+      | ^
+ceca2e9
+Fri Apr 17 05:24:14 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|6
+total_score: 5/60
+802c55d
+Fri Apr 17 05:52:12 PM UTC 2026: 
+ hashmap.c | 40 ++++++++++++++++++++++++++++------------
+ 1 file changed, 28 insertions(+), 12 deletions(-)
+Compilation failed
+test.c: In function ‘insertMap’:
+test.c:508:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  508 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:529:1: error: expected declaration or statement at end of input
+  529 | }
+      | ^
+test.c: At top level:
+test.c:508:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  508 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:218:5: error: ‘insert_test5’ defined but not used [-Werror=unused-function]
+  218 | int insert_test5(){ //factor de carga>0.7, se llama a función enlarge
+      |     ^~~~~~~~~~~~
+test.c:132:6: error: ‘compare_test’ defined but not used [-Werror=unused-function]
+  132 | void compare_test(){
+      |      ^~~~~~~~~~~~
+test.c:126:6: error: ‘hash_test3’ defined but not used [-Werror=unused-function]
+  126 | void hash_test3(){ //no random
+      |      ^~~~~~~~~~
+test.c:112:6: error: ‘hash_test2’ defined but not used [-Werror=unused-function]
+  112 | void hash_test2(){ // colisiones
+      |      ^~~~~~~~~~
+test.c:101:6: error: ‘hash_test1’ defined but not used [-Werror=unused-function]
+  101 | void hash_test1(){ // posición válida
+      |      ^~~~~~~~~~
+cc1: all warnings being treated as errors
+169e823
+Fri Apr 17 05:53:33 PM UTC 2026: 
+Compilation failed
+test.c: In function ‘insertMap’:
+test.c:508:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  508 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:529:1: error: expected declaration or statement at end of input
+  529 | }
+      | ^
+test.c: At top level:
+test.c:508:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  508 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:218:5: error: ‘insert_test5’ defined but not used [-Werror=unused-function]
+  218 | int insert_test5(){ //factor de carga>0.7, se llama a función enlarge
+      |     ^~~~~~~~~~~~
+test.c:132:6: error: ‘compare_test’ defined but not used [-Werror=unused-function]
+  132 | void compare_test(){
+      |      ^~~~~~~~~~~~
+test.c:126:6: error: ‘hash_test3’ defined but not used [-Werror=unused-function]
+  126 | void hash_test3(){ //no random
+      |      ^~~~~~~~~~
+test.c:112:6: error: ‘hash_test2’ defined but not used [-Werror=unused-function]
+  112 | void hash_test2(){ // colisiones
+      |      ^~~~~~~~~~
+test.c:101:6: error: ‘hash_test1’ defined but not used [-Werror=unused-function]
+  101 | void hash_test1(){ // posición válida
+      |      ^~~~~~~~~~
+cc1: all warnings being treated as errors
+e111b97
+Fri Apr 17 05:54:12 PM UTC 2026: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  5|4
+total_score: 20/60
+98c1a88
+Fri Apr 17 05:54:45 PM UTC 2026: 
+ tests:  5|4
+total_score: 20/60
+824793a
+Fri Apr 17 06:35:55 PM UTC 2026: 
+ hashmap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:118:7: error: expected ‘while’ before ‘(’ token
+  118 |     } (while pos != start); // aqui sigo mientras no haya vuelto al principio
+      |       ^
+hashmap.c:107:10: error: unused variable ‘start’ [-Werror=unused-variable]
+  107 |     long start = pos; // guardo la posicion inicial
+      |          ^~~~~
+cc1: all warnings being treated as errors
+735db46
+Fri Apr 17 06:36:41 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|4
+total_score: 20/60
+54ece90
+Fri Apr 17 06:39:31 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  8|3
+total_score: 30/60
+541cabc
+Sat Apr 18 04:31:41 PM UTC 2026: 
+ hashmap.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+ tests:  11|2
+total_score: 40/60
+82bb081
+Sat Apr 18 04:37:40 PM UTC 2026: 
+ hashmap.c | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
+ tests:  13|2
+total_score: 40/60
+3804e60
+Sat Apr 18 04:40:22 PM UTC 2026: 
+ hashmap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:155:56: error: ‘key’ undeclared (first use in this function); did you mean ‘key_t’?
+  155 |         if (map->buckets[i] != NULL && map->buckets[i]>key != NULL){
+      |                                                        ^~~
+      |                                                        key_t
+hashmap.c:155:56: note: each undeclared identifier is reported only once for each function it appears in
+c19afbc
+Sat Apr 18 04:40:48 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|1
+total_score: 50/60
+0e1ff24
+Sat Apr 18 04:47:43 PM UTC 2026: 
+ hashmap.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:182:18: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+  182 |     map->buckets = (Pair *)malloc(sizeof(Pair*) * map->capacity);
+      |                  ^
+daab735
+Sat Apr 18 04:47:57 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  17|0
+total_score: 60/60
+30e4ae4
