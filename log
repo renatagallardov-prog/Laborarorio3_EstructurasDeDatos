@@ -165,3 +165,13 @@ Sat Apr 18 04:40:48 PM UTC 2026:
  tests:  16|1
 total_score: 50/60
 0e1ff24
+Sat Apr 18 04:47:43 PM UTC 2026: 
+ hashmap.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:182:18: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+  182 |     map->buckets = (Pair *)malloc(sizeof(Pair*) * map->capacity);
+      |                  ^
+daab735
